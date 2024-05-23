@@ -1,8 +1,8 @@
 package generic.ex2;
 
-import generic.ex2.animal.Animal;
-import generic.ex2.animal.Cat;
-import generic.ex2.animal.Dog;
+import generic.animal.Animal;
+import generic.animal.Cat;
+import generic.animal.Dog;
 
 public class AnimalMain2 {
     /**

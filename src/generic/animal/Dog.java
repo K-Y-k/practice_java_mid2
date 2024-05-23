@@ -1,4 +1,4 @@
-package generic.ex2.animal;
+package generic.animal;
 
 public class Dog extends Animal {
     public Dog(String name, int size) {
@@ -7,6 +7,6 @@ public class Dog extends Animal {
 
     @Override
     public void sound() {
-        System.out.println("왈왈");
+        System.out.println("멍멍");
     }
 }

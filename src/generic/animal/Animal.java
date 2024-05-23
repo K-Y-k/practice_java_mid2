@@ -1,4 +1,4 @@
-package generic.ex2.animal;
+package generic.animal;
 
 /**
  * 제네릭 활용 예제
