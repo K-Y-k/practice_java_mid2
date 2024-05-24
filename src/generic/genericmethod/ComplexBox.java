@@ -1,4 +1,4 @@
-package generic.test.ex4;
+package generic.genericmethod;
 
 import generic.animal.Animal;
 

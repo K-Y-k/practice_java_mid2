@@ -1,4 +1,4 @@
-package generic.test.ex4;
+package generic.genericmethod;
 
 public class GenericMethod {
     // 오브젝트 메서드
