@@ -33,7 +33,7 @@ public class NodeMain {
         // 특정 index의 노드 조회하기
         System.out.println("특정 index의 노드 조회하기");
         int index = 2;
-        Node index2Node = getNod(first, index);
+        Node index2Node = getNode(first, index);
         System.out.println("index2Node = " + index2Node.item);
         System.out.println();
 
@@ -69,7 +69,7 @@ public class NodeMain {
     }
 
     // 특정 index의 노드 조회 메서드
-    private static Node getNod(Node node, int index) {
+    private static Node getNode(Node node, int index) {
         Node x = node;
 
         // 처음부터 특정 인덱스까지 반복하여
@@ -83,6 +83,6 @@ public class NodeMain {
     // 데이터 추가 메서드
     private static void add(Node node, String item) {
         Node lastNode = getLastNode(node); // 마지막 노드 조회 메서드를 통해 현재의 마지막 노드를 찾은 후
-        lastNode.next = new Node(item);   // 현재의 마지막 노드의 다음 노드의 참조값에 넣는다.
+        lastNode.next = new Node(item);    // 현재의 마지막 노드의 다음 노드의 참조값에 넣는다.
     }
 }
