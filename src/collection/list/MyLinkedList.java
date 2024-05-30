@@ -1,11 +1,21 @@
-package collection.link;
+package collection.list;
+
 
 /**
- * 직접 구현한 단일 연결 리스트
- * + 각 위치에 따른 데이타 추가/삭제 추가 (V2)
- * + 제네릭 도입 (V3)
+ * 직접 구현한 단일 연결 리스트에 추상화한 리스트 인터페이스에 상속
+ *
+ * - 장점
+ * 1.동적으로 크기를 하나씩 늘려 메모리 낭비가 없다.
+ * 2.제일 앞에 데이터 추가는 성능이 좋고
+ *   중간 위치의 추가/삭제에 대한 성능 문제를 어느정도 극복할 수 있다.
+ *   배열은 기존 데이터들을 일일히 옮기는 연산을 했지만
+ *   연결 리스트는 참조만 바꿔주는 연산만 하면 되기 때문이다.
+ *
+ * - 단점
+ * 1.인덱스 조회와 마지막에 데이터 추가는
+ *   다음 노드를 하나씩 조회하며 찾아야 하므로 성능이 나쁘다. (O(n))
  */
-public class MyLinkedListV3<E> {
+public class MyLinkedList<E> implements MyList<E> {
     /**
      * 중첩 클래스로 선언한 Node<E>로 적용
      */
@@ -13,7 +23,11 @@ public class MyLinkedListV3<E> {
     private int size = 0;     // 현재까지 저장된 데이터의 크기
 
 
+    /**
+     * 추상화한 인터페이스의 기능을 오버라이드 한 기능들
+     */
     // 끝에 노드 추가
+    @Override
     public void add(E e) {
       Node<E> newNode = new Node<>(e);
       if (first == null) {               // 첫번째 노드가 null이면
@@ -40,6 +54,7 @@ public class MyLinkedListV3<E> {
 
 
     // 제일 앞과 중간의 데이터 추가
+    @Override
     public void add(int index, E e) {
         Node<E> newNode = new Node<>(e);               // 입력받은 데이터의 노드를 생성하고
 
@@ -58,6 +73,7 @@ public class MyLinkedListV3<E> {
 
 
     // 제일 앞과 중간의 데이터 삭제
+    @Override
     public E remove(int index) {
         Node<E> removeNode = getNode(index);         // 입력한 인덱스의 노드를 찾아주고
         E removedItem = removeNode.item;     // 삭제할 노드 꺼내오기
@@ -78,6 +94,7 @@ public class MyLinkedListV3<E> {
 
 
     // 특정 index의 값 꺼내기
+    @Override
     public E get(int index) {
         Node<E> node = getNode(index); // 입력한 인덱스의 노드를 찾고
         return node.item;           // 반환
@@ -97,6 +114,7 @@ public class MyLinkedListV3<E> {
 
 
     // 특정 index의 값 변경
+    @Override
     public E set(int index, E element) {
         Node<E> x = getNode(index);  // 입력한 인덱스에 대한 노드를 찾고
         E oldValue = x.item; // 변경전 값을 저장해두고
@@ -106,6 +124,7 @@ public class MyLinkedListV3<E> {
 
 
     // 몇번째 인덱스인지 검색
+    @Override
     public int indexOf(E o) {
         int index = 0;              // 인덱스 초기화
         Node<E> x = first;             // 첫번째 노드를 넣고
@@ -124,6 +143,7 @@ public class MyLinkedListV3<E> {
 
 
     // 현재까지 저장된 크기
+    @Override
     public int size() {
         return size;
     }
