@@ -9,7 +9,8 @@ import java.util.Arrays;
  *    요소의 유무를 빠르게 확인하도록 최적화되어 있다.
  *  
  *  
- * 간단한 Set 직접 구현해보기
+ * - 해시 알고리즘을 적용하지 않은 간단한 Set 직접 구현해보기
+ * 중복이 있는지 모든 요소를 조회하며 확인해야 한다. O(n)
  */
 public class MyHashSetV0 {
     private int[] elementData = new int[10]; // 단순함을 위해 배열로 10고정
