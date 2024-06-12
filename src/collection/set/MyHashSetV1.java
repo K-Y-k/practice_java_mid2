@@ -15,7 +15,7 @@ import java.util.LinkedList;
 public class MyHashSetV1 {
     static final int DEFAULT_INITIAL_CAPACITY = 16;  // 기본 배열 크기 상수
 
-    LinkedList<Integer>[] buckets;
+    private LinkedList<Integer>[] buckets;
 
     private int size = 0;                            // 현재 저장된 데이터의 전체 크기
     private int capacity = DEFAULT_INITIAL_CAPACITY; // 배열의 크기
